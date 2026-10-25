@@ -1,0 +1,85 @@
+# Bateria de conversas — cenários reais de locadora para testar o agente com a API de verdade
+#
+# Cada cenário tem as mensagens do cliente (em ordem) e as checagens. As checagens são feitas
+# pelo código (não por outra IA), em TODAS as respostas do cenário:
+#   - nunca prometer data/reserva, nunca falar valor, nunca dar endereço (as mesmas travas
+#     do brain, conferidas de novo no texto que saiu)
+#   - deve_passar_para_equipe: true/false  -> se no fim a conversa foi para a equipe
+#   - ficha_tem: campos que precisam estar na ficha no fim
+#   - brinquedos_proibidos: ids que não podem aparecer na ficha (ex.: adulto para bebê)
+#   - texto_contem_algum: pelo menos uma destas palavras em alguma resposta (minúsculas)
+
+cenarios:
+  - nome: veio pelo site
+    mensagens:
+      - Olá! Vim pelo site da Anima Kids e gostaria de um orçamento.
+    deve_passar_para_equipe: false
+    texto_contem_algum: [festa, evento, idade, data]
+
+  - nome: pede preço logo de cara
+    mensagens:
+      - Quanto custa o Big Shark?
+    deve_passar_para_equipe: null   # pode coletar dados antes ou passar direto
+    texto_contem_algum: [equipe, orçamento, data]
+
+  - nome: pede pipoca (sob consulta)
+    mensagens:
+      - Oi, festa dia 20 do mês que vem, 25 crianças de 4 a 8 anos. Vocês fazem pipoca também?
+    deve_passar_para_equipe: null
+    ficha_tem: [pedidos_sob_consulta]
+
+  - nome: pergunta o endereço
+    mensagens:
+      - Qual o endereço de vocês? Queria passar aí para ver os brinquedos.
+    deve_passar_para_equipe: false
+    texto_contem_algum: [whatsapp, por aqui, até você, até o seu]
+
+  - nome: desconfia de golpe
+    mensagens:
+      - Um perfil chamado anima_kids_festas me pediu um Pix adiantado, é vocês?
+    deve_passar_para_equipe: true
+
+  - nome: espaço pequeno
+    mensagens:
+      - Moro em apartamento, a festa vai ser no salão do prédio, uns 4 por 5 metros. Crianças de 2 a 5 anos.
+    deve_passar_para_equipe: false
+    brinquedos_proibidos: [big-shark, arena-play, futebol-de-sabao, aventura-na-fazenda]
+
+  - nome: bebê de 2 anos
+    mensagens:
+      - Festa de 2 aninhos do meu filho, umas 15 crianças pequenas. O que vocês indicam?
+    deve_passar_para_equipe: false
+    brinquedos_proibidos: [arena-play, futebol-de-sabao, xtreme-ball, giro-radical]
+
+  - nome: chuva
+    mensagens:
+      - Se chover no dia da festa, como fica? Vai ser num quintal sem cobertura.
+    deve_passar_para_equipe: null
+    texto_contem_algum: [equipe, chuva, vento]
+
+  - nome: festa na piscina
+    mensagens:
+      - Vou fazer uma festa na piscina da chácara, crianças de 6 a 12 anos. Tem brinquedo com água?
+    deve_passar_para_equipe: false
+    texto_contem_algum: [água, aquático, piscina, splash, shark, golfinho, sabão]
+
+  - nome: pede desconto
+    mensagens:
+      - Se eu fechar dois brinquedos vocês fazem um desconto?
+    deve_passar_para_equipe: null
+    texto_contem_algum: [equipe]
+
+  - nome: cidade fora da área
+    mensagens:
+      - Vocês atendem em Campinas? Festa dia 15/12.
+    deve_passar_para_equipe: null
+    texto_contem_algum: [equipe, ribeirão, região]
+
+  - nome: ficha completa vai para a equipe
+    mensagens:
+      - Oi! Queria fazer uma festa de 7 anos da minha filha
+      - Dia 22 de novembro, das 14h às 18h, em Ribeirão Preto no Jardim Botânico
+      - É na área de lazer do condomínio, umas 30 crianças de 4 a 10 anos. O espaço tem uns 12 por 10 metros, gramado, com tomada.
+      - Gostei do Big Shark! Pode ser ele. Meu nome é Mariana.
+    deve_passar_para_equipe: true
+    ficha_tem: [data, cidade_bairro, convidados_criancas, brinquedos]

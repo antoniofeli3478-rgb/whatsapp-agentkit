@@ -1,0 +1,28 @@
+# Catálogo da empresa — modelo
+# Copie um bloco por brinquedo. O que não souber, deixe null: o agente diz que "a equipe confirma".
+# Veja empresas/anima-kids/catalogo.yaml para um exemplo completo.
+
+itens:
+  - id: exemplo-toboga            # nome curto, sem espaço nem acento
+    nome: Tobogã Exemplo
+    linha: toboga                 # kid-play | pocket | baby | toboga | circuito | esportivo | tradicional | jogos | agua | alimentacao
+    ativo: true                   # false = o agente não oferece
+    idade: [5, 12]                # faixa sugerida
+    aquatico: opcional            # nao | sim | opcional
+    medidas_m: [8.0, 4.0, 5.0]    # comprimento, largura, altura (ou null)
+    area_m: null                  # espaço para montar, com folga (ou null)
+    capacidade: 4                 # crianças por vez (ou null)
+    destaque: Uma frase que vende o brinquedo, no jeito da empresa.
+    fotos:
+      - https://exemplo.com/foto-do-toboga.jpg   # link público da foto
+    pagina: null
+    preco: null                   # só aparece se regras.yaml tiver mostrar_precos: true
+    quantidade: null
+
+  - id: pipoca
+    nome: Pipoca
+    linha: alimentacao
+    ativo: true
+    sob_consulta: true            # o agente não oferece; se pedirem, anota para a equipe
+    fotos: []
+    preco: null

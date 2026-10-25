@@ -1,0 +1,96 @@
+# MODELO de regras (exemplo preenchido com a Anima Kids: troque pelos dados da nova empresa)
+#
+# REGRA DE OURO: a IA atende, a equipe fecha. A empresa decide caso a caso (agenda, preço,
+# encaixar um item sob consulta). O agente coleta, sugere e passa para a equipe.
+
+atendimento:
+  # Preços: enquanto o dono não passar a tabela, o agente NUNCA fala valor.
+  mostrar_precos: false
+  # Horário em que a equipe responde no WhatsApp (null = não informado; o agente não promete prazo)
+  horario_equipe: null
+  # Locação padrão
+  duracao_padrao_horas: 4
+
+endereco:
+  # A empresa NÃO tem endereço físico para atender. Os endereços do Google Maps são só para
+  # aparecer nas buscas: ninguém atende lá.
+  tem_endereco: false
+  resposta: >-
+    A gente não tem loja para visitar: o atendimento é todo por aqui pelo WhatsApp, e a gente
+    leva a diversão até o seu evento. 🎈
+
+pagamento:
+  # Dados oficiais de pagamento. Enquanto estiverem vazios, o agente diz que a equipe passa.
+  pix_chave: null
+  pix_titular: null
+  sinal: null
+  aviso_golpe: >-
+    A Anima Kids Park só atende por este WhatsApp, (16) 98808-4847, e pelo Instagram
+    @animakidspark. Não temos outros perfis, não ligamos oferecendo serviço e não cobramos nada
+    fora dos canais oficiais. Na dúvida, confirme sempre por aqui.
+
+# O que o agente precisa perguntar para a equipe conseguir orçar.
+# "obrigatorio: true" = sem isso a ficha não está completa.
+checklist_orcamento:
+  - campo: data
+    pergunta: Qual a data do evento?
+    obrigatorio: true
+  - campo: horario
+    pergunta: Que horas começa e termina?
+    obrigatorio: true
+  - campo: cidade_bairro
+    pergunta: Em qual cidade e bairro vai ser?
+    obrigatorio: true
+  - campo: tipo_local
+    pergunta: É em casa, condomínio, chácara, salão de festas, escola?
+    obrigatorio: true
+  - campo: convidados_criancas
+    pergunta: Quantas crianças, mais ou menos?
+    obrigatorio: true
+  - campo: idades
+    pergunta: Qual a faixa de idade delas?
+    obrigatorio: true
+  - campo: espaco
+    pergunta: Qual o tamanho do espaço (ou pode mandar uma foto)?
+    obrigatorio: true
+  - campo: piso
+    pergunta: O piso é grama, cimento, terra...?
+    obrigatorio: false
+  - campo: coberto
+    pergunta: O local é coberto? Se for, qual a altura do teto?
+    obrigatorio: false
+  - campo: energia_agua
+    pergunta: Tem tomada perto? (e ponto de água, se for brinquedo aquático)
+    obrigatorio: false
+  - campo: acesso
+    pergunta: Como é o acesso para montar? (portão, escada, elevador)
+    obrigatorio: false
+  - campo: brinquedos
+    pergunta: Quais brinquedos chamaram mais a sua atenção?
+    obrigatorio: true
+  - campo: nome
+    pergunta: E qual é o seu nome?
+    obrigatorio: false
+
+uso_e_seguranca:
+  - Todos os brinquedos são montados e desmontados pela equipe, com monitor uniformizado conforme a atração.
+  - Os brinquedos são higienizados depois de cada evento.
+  - Tem ART e acompanhamento de engenharia quando o equipamento pede.
+  - Inflável precisa de piso nivelado e de tomada perto (um ponto de energia por inflável).
+  - Nas atrações com água, nada de jeans; roupa leve que possa molhar.
+  - Não entra comida, bebida nem objeto cortante nos brinquedos.
+  - Crianças pequenas e maiores não brincam juntas no mesmo brinquedo; com idades misturadas, o ideal é uma área baby separada.
+  - Chuva e vento são avaliados pela equipe antes e durante a montagem; em evento ao ar livre isso é combinado com a equipe.
+  - Condomínio pode pedir autorização para usar a área comum; vale confirmar com o síndico.
+  - Em local coberto, a altura do teto pode limitar tobogãs e brinquedos altos.
+
+# Quando passar a conversa para a equipe (o agente chama a ferramenta passar_para_equipe)
+passar_para_equipe_quando:
+  - a ficha tem os dados obrigatórios e pelo menos um brinquedo de interesse
+  - o cliente pede preço, orçamento, desconto, quer fechar ou reservar
+  - o cliente quer falar com uma pessoa
+  - reclamação, problema com um evento, cancelamento ou remarcação
+  - o cliente desconfia de golpe ou fala de outro perfil
+  - pedido de algo sob consulta (pipoca, algodão-doce, touro, jogos, recreação), depois de anotar
+  - cidade fora da região atendida
+  - evento grande (empresa, escola, mais de 80 crianças)
