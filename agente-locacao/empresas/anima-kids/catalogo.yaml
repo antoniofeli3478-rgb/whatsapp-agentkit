@@ -1,0 +1,691 @@
+# Catálogo da Anima Kids Park — o que o agente conhece e pode sugerir
+#
+# Montado em 25/10/2026 a partir do site animakidsfestas.com.br e do Instagram @animakidspark.
+# O que ainda NÃO sabemos fica em branco (null) e o agente diz que "a equipe confirma":
+#   preco          -> o agente nunca fala valor (regras.yaml: mostrar_precos: false)
+#   medidas        -> só alguns brinquedos têm ficha; os outros, a equipe confirma pelo espaço
+#   quantidade     -> quantas unidades existem (null = não sabemos)
+#
+# Campos de cada item:
+#   id             nome curto e único, sem espaço (o agente usa para pedir foto e detalhes)
+#   nome           como o cliente vê
+#   linha          kid-play | pocket | baby | toboga | circuito | esportivo | tradicional | jogos | agua | alimentacao
+#   ativo          false = está no site, mas o agente NÃO oferece
+#   sob_consulta   true = o agente não oferece; se o cliente pedir, anota para a equipe decidir
+#   idade          [mínima, máxima] sugerida (fonte: faixas do site; a equipe confirma)
+#   aquatico       nao | sim | opcional
+#   medidas_m      comprimento x largura x altura do brinquedo, em metros
+#   area_m         espaço recomendado para montar (com folga), em metros
+#   capacidade     crianças ao mesmo tempo
+#   destaque       uma frase para o agente usar (do jeito da empresa)
+#   fotos          links públicos do site da empresa
+
+itens:
+  # ── Kid Plays (multiatividades) ─────────────────────────────────────────
+  - id: aventura-na-fazenda
+    nome: Aventura na Fazenda (Kid Play Celeiro)
+    linha: kid-play
+    ativo: true
+    idade: [1, 8]
+    aquatico: nao
+    medidas_m: [5.40, 5.00, 3.40]
+    area_m: [8.80, 8.40, 5.80]
+    capacidade: 4
+    destaque: >-
+      Novidade! Cinco brincadeiras num brinquedo só: joão-bobo, pula-pula, escalada,
+      escorregador e pêndulo, com celeiro vermelho, vaquinha e galo no telhado. Os pequenos
+      se sentem numa aventura no campo.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2026/10/aventura-na-fazenda-featured.jpg
+    pagina: https://www.animakidsfestas.com.br/kid-play-celeiro-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: kid-play-patrulha-canina
+    nome: Kid Play Patrulha Canina
+    linha: kid-play
+    ativo: true
+    idade: [1, 12]
+    aquatico: nao
+    medidas_m: [6.40, 5.00, 3.50]
+    area_m: null
+    capacidade: 5
+    destaque: O farol da Patrulha Canina, com o visual que a criançada reconhece de longe.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2023/03/patrulha-com-logo-anima.png
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2023/03/com-logo-patrulha-4.png
+    pagina: https://www.animakidsfestas.com.br/kid-play-patrulha-canina-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: kid-play-aventura
+    nome: Kid Play Aventura
+    linha: kid-play
+    ativo: true
+    idade: [2, 10]
+    aquatico: nao
+    medidas_m: null
+    area_m: [9.40, 6.10, 3.40]
+    capacidade: 3
+    destaque: Várias brincadeiras numa estrutura só, para a criança passar a festa explorando.
+    fotos: []
+    pagina: https://www.animakidsfestas.com.br/kid-play-aventura-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: jardim-encantado
+    nome: Jardim Encantado Kid Play
+    linha: kid-play
+    ativo: true
+    idade: [1, 8]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Multiatividades temático, delicado e colorido, lindo para festas de jardim.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2023/01/mult_play_jardim_encantado_1161_4_1ecd6cb57a0d716974662d68a84811a4.webp
+    pagina: https://www.animakidsfestas.com.br/jardim-encantado-kid-play-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: kid-play-polvo
+    nome: Polvo Kid Play
+    linha: kid-play
+    ativo: true
+    idade: [1, 8]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Um polvo gigante cheio de brincadeiras, tema fundo do mar.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2026/10/kid-play-polvo-anima-kids.jpg
+    pagina: https://www.animakidsfestas.com.br/polvo-kid-play-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: kid-play-safari
+    nome: Safari Kid Play
+    linha: kid-play
+    ativo: true
+    idade: [1, 8]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Tema de bichos da selva, combina com quase toda decoração e chama as crianças.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2026/10/kid-play-safari-anima-kids.jpg
+    pagina: https://www.animakidsfestas.com.br/safari-kid-play-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: kid-play-circo
+    nome: Circo Kid Play
+    linha: kid-play
+    ativo: true
+    idade: [1, 8]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Clima de picadeiro para festa de tema circo.
+    fotos: []
+    pagina: https://www.animakidsfestas.com.br/circo-kid-play-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: crocokid
+    nome: CrocoKid
+    linha: kid-play
+    ativo: true
+    idade: [1, 8]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: O crocodilo de boca aberta que faz sucesso nas fotos da festa.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2017/11/Pula-Pula-Croco-4.jpeg
+    pagina: https://www.animakidsfestas.com.br/crocokid-inflavel-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  # ── Linha Pocket 3 em 1 (compactos, bons para espaço pequeno) ──────────
+  - id: pocket-vaquinha
+    nome: Pocket Vaquinha 3 em 1
+    linha: pocket
+    ativo: true
+    idade: [1, 6]
+    aquatico: opcional
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: A vaquinha com piscina de bolinhas. "A diversão começa aqui!" Compacta, cabe em espaço menor.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2023/02/Combo-Pocket-Vaquinha-4.webp
+    pagina: https://www.animakidsfestas.com.br/pocket-vaquinha-3-em-1-ribeirao-preto/
+    preco: null
+    quantidade: 1
+
+  - id: pocket-tigrinho
+    nome: Tigrinho Pocket 3 em 1
+    linha: pocket
+    ativo: true
+    idade: [1, 6]
+    aquatico: opcional
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Três brincadeiras num brinquedo compacto, com tema de tigrinho.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2022/12/tigre-3.webp
+    pagina: https://www.animakidsfestas.com.br/tigrinho-pocket-3-em-1-ribeirao-preto/
+    preco: null
+    quantidade: 1
+
+  - id: pocket-pirata
+    nome: Pocket Pirata 3 em 1
+    linha: pocket
+    ativo: true
+    idade: [1, 6]
+    aquatico: opcional
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Compacto com tema pirata, perfeito para festa de aventura em espaço pequeno.
+    fotos: []
+    pagina: https://www.animakidsfestas.com.br/pocket-pirata-3-em-1-ribeirao-preto/
+    preco: null
+    quantidade: 1
+
+  - id: pocket-dino
+    nome: Pocket Dino 3 em 1
+    linha: pocket
+    ativo: true
+    idade: [1, 6]
+    aquatico: opcional
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Dinossauro compacto, três brincadeiras, para os pequenos fãs de dino.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2023/03/dino-2.webp
+    pagina: https://www.animakidsfestas.com.br/pocket-dino-3-em-1-ribeirao-preto/
+    preco: null
+    quantidade: 1
+
+  - id: pocket-safari
+    nome: Pocket Safari 3 em 1
+    linha: pocket
+    ativo: true
+    idade: [1, 6]
+    aquatico: opcional
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Safari compacto, ótimo para área pequena ou como área baby numa festa maior.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2026/10/pocket-safari-3-em-1.jpg
+    pagina: https://www.animakidsfestas.com.br/pocket-safari-3-em-1-ribeirao-preto/
+    preco: null
+    quantidade: 1
+
+  # ── Baby e tradicionais ────────────────────────────────────────────────
+  - id: baby-fantasia
+    nome: Baby Fantasia
+    linha: baby
+    ativo: true
+    idade: [0, 4]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Feito para os bem pequenos brincarem com segurança, separados dos maiores.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2026/10/baby-fantasia-featured.jpg
+    pagina: https://www.animakidsfestas.com.br/baby-fantasia-inflavel-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: circuito-safari-baby
+    nome: Circuito Safari Baby
+    linha: baby
+    ativo: true
+    idade: [1, 5]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Um circuitinho com tema safari, na medida para quem está começando a se aventurar.
+    fotos: []
+    pagina: https://www.animakidsfestas.com.br/circuito-safari-baby-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: piscina-de-bolinhas
+    nome: Piscina de Bolinhas
+    linha: tradicional
+    ativo: true
+    idade: [1, 4]
+    aquatico: nao
+    medidas_m: [1.50, 1.50, 1.90]
+    area_m: null
+    capacidade: 3
+    destaque: O clássico dos pequenos, cabe em quase qualquer canto.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2016/10/piscina-bolinha-inflavel-anima-kids-4.jpg
+    pagina: https://www.animakidsfestas.com.br/piscina-de-bolinhas/
+    preco: null
+    quantidade: null
+
+  - id: cama-elastica
+    nome: Cama Elástica (pula-pula)
+    linha: tradicional
+    ativo: true
+    idade: [3, 12]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: O pula-pula clássico, em vários tamanhos conforme o espaço.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2016/10/Loca%C3%A7%C3%A3o-cama-elastica-anima-kids.jpg
+    pagina: https://www.animakidsfestas.com.br/cama-elastica-para-festas-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  # ── Tobogãs (os grandes destaques) ──────────────────────────────────────
+  - id: big-shark
+    nome: Big Shark (tobogã gigante)
+    linha: toboga
+    ativo: true
+    idade: [5, 99]
+    aquatico: opcional
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: >-
+      O tubarão gigante, uma das estrelas da casa. Monta seco, com piscina, na beira da
+      piscina ou com slide complementar. Atração central que impressiona todo mundo.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2026/10/big-shark-tobog-gigante-featured.jpg
+    pagina: https://www.animakidsfestas.com.br/big-shark-toboga-gigante-ribeirao-preto/
+    preco: null
+    quantidade: 2
+
+  - id: dual-splash
+    nome: Dual Splash
+    linha: toboga
+    ativo: true
+    idade: [5, 99]
+    aquatico: sim
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Tobogã aquático de pista dupla, para descer lado a lado (novidade do Instagram, detalhes com a equipe).
+    fotos: []
+    pagina: null
+    preco: null
+    quantidade: null
+
+  - id: toboga-t-rex
+    nome: Tobogã T-Rex
+    linha: toboga
+    ativo: true
+    idade: [5, 99]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: "Coragem pra encarar esse gigante? 🦖 O T-Rex é de cair o queixo."
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2026/10/toboga-t-rex-frente.jpg
+    pagina: https://www.animakidsfestas.com.br/toboga-t-rex-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: combo-t-rex
+    nome: Combo T-Rex
+    linha: toboga
+    ativo: true
+    idade: [4, 13]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Tema jurássico com tobogã e área de brincadeira juntos.
+    fotos: []
+    pagina: https://www.animakidsfestas.com.br/combo-t-rex-inflavel-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: invasao-jurassica
+    nome: Invasão Jurássica
+    linha: toboga
+    ativo: true
+    idade: [5, 13]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Dinossauros por todo lado, para festa jurássica de verdade.
+    fotos: []
+    pagina: https://www.animakidsfestas.com.br/invasao-jurassica-inflavel-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: parque-dos-dinossauros
+    nome: Parque dos Dinossauros
+    linha: toboga
+    ativo: true
+    idade: [4, 12]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Temática jurássica com visual forte, as crianças ficam encantadas.
+    fotos: []
+    pagina: https://www.animakidsfestas.com.br/parque-dos-dinossauros-inflavel-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: tigrao
+    nome: Tigrão
+    linha: toboga
+    ativo: true
+    idade: [5, 13]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Tobogã temático de grande impacto visual.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2016/10/tigr%C3%A3o1.jpg
+    pagina: https://www.animakidsfestas.com.br/tigrao-inflavel-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: toboga-safari
+    nome: Tobogã Safari
+    linha: toboga
+    ativo: true
+    idade: [5, 13]
+    aquatico: opcional
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Tobogã de grande porte com tema de aventura na selva.
+    fotos: []
+    pagina: https://www.animakidsfestas.com.br/toboga-safari-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: super-golfinho
+    nome: Super Golfinho 3 em 1
+    linha: toboga
+    ativo: true
+    idade: [4, 13]
+    aquatico: opcional
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: O golfinho com arco-íris, lindo em festa na piscina.
+    fotos: []
+    pagina: https://www.animakidsfestas.com.br/super-golfinho-3-em-1-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: super-3-em-1
+    nome: Tobogã Super 3 em 1 com piscina
+    linha: toboga
+    ativo: true
+    idade: [4, 13]
+    aquatico: opcional
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Opção versátil, seco ou com piscina.
+    fotos: []
+    pagina: https://www.animakidsfestas.com.br/toboga/
+    preco: null
+    quantidade: null
+
+  # ── Circuitos ───────────────────────────────────────────────────────────
+  - id: corrida-divertida
+    nome: Corrida Divertida
+    linha: circuito
+    ativo: true
+    idade: [5, 13]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Circuito com obstáculos e desafios, para correr, competir e dar risada em grupo.
+    fotos: []
+    pagina: https://www.animakidsfestas.com.br/corrida-divertida-inflavel-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: circuito-radical-modular
+    nome: Corrida de Obstáculos (Circuito Radical Modular)
+    linha: circuito
+    ativo: true
+    idade: [5, 99]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Modular, a gente monta o percurso do tamanho do seu espaço, com escalada, obstáculos e tobogã.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2026/10/circuito-radical-modular-panoramica-anima-kids-ribeirao-preto.webp
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2026/10/circuito-radical-modular-obstaculos-anima-kids-ribeirao-preto.webp
+    pagina: https://www.animakidsfestas.com.br/multi-atividades/
+    preco: null
+    quantidade: null
+
+  # ── Esportivos ──────────────────────────────────────────────────────────
+  - id: futebol-de-sabao
+    nome: Futebol de Sabão (7x5, Brasileirão 7x5, 10x5, Champions 10x5)
+    linha: esportivo
+    ativo: true
+    idade: [7, 99]
+    aquatico: sim
+    medidas_m: [7.0, 5.0, null]
+    area_m: null
+    capacidade: null
+    destaque: >-
+      Cinco campos em dois tamanhos (7x5 e 10x5), para criança maior, adolescente e adulto.
+      Precisa de ponto de água e de energia. Combina demais com o canhão de espuma.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2026/10/futebol-de-sabao-brasileirao-anima-kids.jpg
+    pagina: https://www.animakidsfestas.com.br/futebol-de-sabao-ribeirao-preto/
+    preco: null
+    quantidade: 5
+
+  - id: arena-play
+    nome: Arena Play 12x6
+    linha: esportivo
+    ativo: true
+    idade: [8, 99]
+    aquatico: nao
+    medidas_m: [12.0, 6.0, null]
+    area_m: null
+    capacidade: null
+    destaque: Uma arena enorme para futebol e desafios em grupo, de pré-adolescente a adulto.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2026/10/arena-play-featured.jpg
+    pagina: https://www.animakidsfestas.com.br/arena-play-inflavel-ribeirao-preto/
+    preco: null
+    quantidade: 1
+
+  - id: xtreme-ball
+    nome: Xtreme Ball
+    linha: esportivo
+    ativo: true
+    idade: [8, 99]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Atração de impacto, desafio e muita torcida em volta.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2026/10/xtreme-ball-featured.jpg
+    pagina: https://www.animakidsfestas.com.br/xtreme-ball-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: giro-radical
+    nome: Giro Radical
+    linha: esportivo
+    ativo: true
+    idade: [5, 99]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Clima de gincana de TV, movimento e desafio para criança maior, adolescente e adulto.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2026/10/giro-radical-featured.jpg
+    pagina: https://www.animakidsfestas.com.br/giro-radical-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: bumper-ball
+    nome: Bumper Ball
+    linha: esportivo
+    ativo: true
+    idade: [8, 99]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: 1
+    destaque: Bolas infláveis para vestir e trombar de leve, risada garantida.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2016/10/BumperBallPP.jpg
+    pagina: https://www.animakidsfestas.com.br/esportivo/
+    preco: null
+    quantidade: null
+
+  - id: air-soccer
+    nome: Air Soccer
+    linha: esportivo
+    ativo: true
+    idade: [6, 99]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Futebol inflável rápido e competitivo.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2026/10/air-soccer-inflavel-vista-frontal-anima-kids-ribeirao-preto.webp
+    pagina: https://www.animakidsfestas.com.br/air-soccer-para-festas-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: basquete-inflavel
+    nome: Basquete Inflável
+    linha: esportivo
+    ativo: true
+    idade: [5, 99]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Desafio de pontaria que complementa os brinquedos maiores.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2016/10/BasqueteDestaque.png
+    pagina: https://www.animakidsfestas.com.br/basquete-inflavel-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  - id: multi-target
+    nome: Multi Target
+    linha: esportivo
+    ativo: true
+    idade: [5, 99]
+    aquatico: nao
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Inflável de pontaria e habilidade.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2016/10/Mult_Target_transf500x400px.jpg
+    pagina: https://www.animakidsfestas.com.br/multi-target-inflavel-ribeirao-preto/
+    preco: null
+    quantidade: null
+
+  # ── Água ────────────────────────────────────────────────────────────────
+  - id: canhao-de-espuma
+    nome: Canhão de Espuma
+    linha: agua
+    ativo: true
+    idade: [3, 99]
+    aquatico: sim
+    medidas_m: null
+    area_m: null
+    capacidade: null
+    destaque: Um momento de espuma programado vira o ponto alto da festa, ainda mais junto do futebol de sabão.
+    fotos:
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2026/10/canhao-de-espuma-anima-kids.jpg
+      - https://www.animakidsfestas.com.br/wp-content/uploads/2026/10/canhao-de-espuma-futebol-de-sabao.jpg
+    pagina: https://www.animakidsfestas.com.br/canhao-de-espuma-ribeirao-preto/
+    preco: null
+    quantidade: 2
+
+  - id: water-ball
+    nome: Water Ball (bolha na piscina)
+    linha: agua
+    ativo: true
+    idade: [6, 99]
+    aquatico: sim
+    medidas_m: null
+    area_m: null
+    capacidade: 1
+    destaque: Uma bolha transparente gigante para andar sobre a água da piscina.
+    fotos: []
+    pagina: https://www.animakidsfestas.com.br/bola-ou-bolha-de-piscina-water-ball-ou-aquabol-anima-kids/
+    preco: null
+    quantidade: null
+
+  # ── Sob consulta: o agente NÃO oferece; se o cliente pedir, anota ───────
+  - id: pipoca
+    nome: Pipoca (carrinho com atendente)
+    linha: alimentacao
+    ativo: true
+    sob_consulta: true
+    fotos: []
+    preco: null
+
+  - id: algodao-doce
+    nome: Algodão-doce (com atendente)
+    linha: alimentacao
+    ativo: true
+    sob_consulta: true
+    fotos: []
+    preco: null
+
+  - id: touro-mecanico
+    nome: Touro Mecânico
+    linha: esportivo
+    ativo: true
+    sob_consulta: true
+    fotos: []
+    preco: null
+
+  - id: jogos-de-mesa
+    nome: Jogos de mesa (air hockey, ping-pong, pebolim, fliperama, autorama, corrida maluca)
+    linha: jogos
+    ativo: true
+    sob_consulta: true
+    fotos: []
+    preco: null
+
+  - id: recreacao
+    nome: Recreação com recreadores
+    linha: servico
+    ativo: true
+    sob_consulta: true
+    fotos: []
+    preco: null

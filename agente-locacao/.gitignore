@@ -1,0 +1,21 @@
+# O .gitignore da raiz do AgentKit esconde agent/, config/ e tests/ (sao gerados no onboarding).
+# Aqui eles SAO o projeto, entao liberamos de novo dentro desta pasta.
+!agent/
+!agent/**
+!tests/
+!tests/**
+!requirements.txt
+!Dockerfile
+!docker-compose.yml
+
+# Segredos e dados locais: nunca vao para o GitHub
+.env
+*.db
+*.sqlite
+*.sqlite3
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+resultados/
